@@ -1,7 +1,16 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 <x-header>
-    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <div class="h-screen bg-cover bg-center flex items-center justify-center text-center"
+        style="background-image: url('img/bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+        <div class="">
+            <h1 class="text-gray-100 sm:text-5xl">Selamat Datang</h1>
+            <h1 class="text-gray-100 sm:text-5xl">di SMK Sukapura</h1>
+        </div>
+    </div>
+
+    {{-- <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->
@@ -70,7 +79,7 @@
                 <span class="sr-only">Next</span>
             </span>
         </button>
-    </div>
+    </div> --}}
 
 
     {{-- profil --}}
@@ -205,25 +214,25 @@
             </div>
             <div
                 class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700  sm:mt-10  lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                {{-- @foreach ($berandas as $beranda) --}}
-                <article class="flex max-w-xl flex-col items-start justify-between">
-                    <div class="group relative grow">
-                        <h3 class="mt-3 text-lg/6 font-semibold text-white group-hover:text-gray-300">
-                            <span class="absolute inset-0"></span>
-                            judul {{-- {{ $beranda->judul }} --}}
-                        </h3>
-                        <p class="mt-5 line-clamp-3 text-sm/6 text-gray-400">
-                            deskipsi {{-- {{ $beranda->deskripsi }} --}}
-                        </p>
-                    </div>
+                @foreach ($galeris as $galeri)
+                    <article class="flex max-w-xl flex-col items-start justify-between">
+                        <div class="group relative grow">
+                            <h3 class="mt-3 text-lg/6 font-semibold text-white group-hover:text-gray-300">
+                                <span class="absolute inset-0"></span>
+                                {{ $galeri->judul }}
+                            </h3>
+                            <p class="mt-5 line-clamp-3 text-sm/6 text-gray-400">
+                                {{ $galeri->deskripsi }}
+                            </p>
+                        </div>
 
-                    <!-- Gambar penuh ke samping -->
-                    <div class="relative mt-8 w-full">
-                        <img src="img/t.jpeg" alt=""
-                            class="w-full h-48 object-cover rounded-lg bg-gray-800" />
-                    </div>
-                </article>
-                {{-- @endforeach --}}
+                        <!-- Gambar penuh ke samping -->
+                        <div class="relative mt-8 w-full">
+                            <img src="img/t.jpeg" alt=""
+                                class="w-full h-48 object-cover rounded-lg bg-gray-800" />
+                        </div>
+                    </article>
+                @endforeach
             </div>
         </div>
     </div>

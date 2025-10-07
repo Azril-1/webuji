@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $berandas = \App\Models\Beranda::all();
+    $galeris = \App\Models\Galeri::all();
     $profils = \App\Models\Profil::all();
     $siswagurus = \App\Models\Siswaguru::selectRaw('
     COALESCE(SUM(siswa),0) as siswa,
@@ -12,13 +12,13 @@ Route::get('/', function () {
     COALESCE(SUM(guru),0) as guru
 ')->first();
     return view('home', [
-        'berandas' => $berandas,
+        'galeris' => $galeris,
         'profils' => $profils,
         'siswagurus' => $siswagurus
     ]);
 });
 Route::get('/home', function () {
-    $berandas = \App\Models\Beranda::all();
+    $galeris = \App\Models\Galeri::all();
     $profils = \App\Models\Profil::all();
     $siswagurus = \App\Models\Siswaguru::selectRaw('
     COALESCE(SUM(siswa),0) as siswa,
@@ -27,7 +27,7 @@ Route::get('/home', function () {
     COALESCE(SUM(guru),0) as guru
 ')->first();
     return view('home', [
-        'berandas' => $berandas,
+        'galeris' => $galeris,
         'profils' => $profils,
         'siswagurus' => $siswagurus
     ]);

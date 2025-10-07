@@ -8,15 +8,15 @@
             </div>
             <div
                 class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700  sm:mt-10  lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                {{-- @foreach ($berandas as $beranda) --}}
+                {{-- @foreach ($galeris as $galeri) --}}
                 <article class="flex max-w-xl flex-col items-start justify-between">
                     <div class="group relative grow">
                         <h3 class="mt-3 text-lg/6 font-semibold text-white group-hover:text-gray-300">
                             <span class="absolute inset-0"></span>
-                            judul {{-- {{ $beranda->judul }} --}}
+                            judul {{-- {{ $galeri->judul }} --}}
                         </h3>
                         <p class="mt-5 line-clamp-3 text-sm/6 text-gray-400">
-                            deskipsi {{-- {{ $beranda->deskripsi }} --}}
+                            deskipsi {{-- {{ $galeri->deskripsi }} --}}
                         </p>
                     </div>
 
